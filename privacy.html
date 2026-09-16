@@ -3,9 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Privacy — Segnale Treni</title>
+  <title>Privacy — Segnale Treni / SegnaleTreno</title>
   <link rel="stylesheet" href="css/style.css" />
-  
 </head>
 <body>
   <header>
@@ -15,20 +14,47 @@
     </nav>
   </header>
   <main>
-    <h1>Privacy minima</h1>
+    <h1>Informativa privacy</h1>
+    <p class="note">Ultimo aggiornamento: 16 settembre 2026. Copre l’app Android <strong>SegnaleTreno</strong> (<code>it.alessandrosanvitale.segnaletreno</code>) e il sito community <strong>Segnale Treni</strong>.</p>
+
     <div class="card">
-      <h2>Cosa contiene il CSV</h2>
-      <p>Coordinate GPS, intensità segnale, etichetta operatore, timestamp. <strong>Niente</strong> nome, email, telefono o account.</p>
-      <h2>Anteprima sul sito (v0)</h2>
-      <p>Su <a href="upload.html">Carica CSV</a> il file viene letto <strong>solo nel tuo browser</strong>: non viene inviato a un server di Segnale Treni.</p>
-      <h2>Contributi community</h2>
-      <p>Se carichi un CSV via Issue/PR GitHub, il tracciato può diventare <strong>pubblico</strong> (mappa community). Non allegare informazioni personali fuori dallo schema CSV.</p>
-      <h2>Roadmap</h2>
-      <p>Eventuale jitter leggero delle coordinate (~100&nbsp;m) e moderazione upload quando ci sarà un backend. Non inventiamo metriche di copertura.</p>
-      <p class="note">Contatto progetto: tramite repository GitHub <code>sinmar123/segnale-treni</code>.</p>
+      <h2>Titolare</h2>
+      <p>Alessandro Sanvitale (Genova). Contatto progetto: repository GitHub <a href="https://github.com/sinmar123/segnale-treni">sinmar123/segnale-treni</a>.</p>
     </div>
 
+    <div class="card">
+      <h2>App SegnaleTreno — dati raccolti sul dispositivo</h2>
+      <p>L’app registra <strong>localmente</strong> (sul telefono) campioni di:</p>
+      <ul>
+        <li>posizione GPS (latitudine, longitudine, accuratezza) durante la registrazione del viaggio;</li>
+        <li>segnale cellulare (dBm/livello, tipo rete, etichetta operatore, metriche LTE/5G se disponibili) per SIM attiva/e;</li>
+        <li>timestamp ISO di ogni campione.</li>
+      </ul>
+      <p><strong>Non</strong> richiede account, <strong>non</strong> invia i dati a server nostri in automatico, <strong>non</strong> raccoglie nome, email, rubrica o contenuti personali. L’export CSV avviene solo se lo condividi tu (share sheet / file).</p>
+      <p>Permessi Android tipici: posizione (anche in background mentre la registrazione è attiva), stato telefono/SIM per dual SIM, notifiche del foreground service. Servono al campionamento in viaggio, non a profilazione pubblicitaria.</p>
+    </div>
+
+    <div class="card">
+      <h2>Sito community — anteprima CSV (v0)</h2>
+      <p>Su <a href="upload.html">Carica CSV</a> il file è letto <strong>solo nel tuo browser</strong>: non viene caricato su un nostro server. La mappa demo può mostrare tracce già pubblicate nel repository (es. contributi o demo).</p>
+    </div>
+
+    <div class="card">
+      <h2>Contributi pubblici</h2>
+      <p>Se pubblichi un CSV (Issue/PR GitHub o futuri upload community), quel tracciato può diventare <strong>visibile a tutti</strong> sulla mappa. Non allegare dati personali fuori dallo schema CSV. Possibile in futuro un leggero jitter delle coordinate (~100&nbsp;m) e moderazione.</p>
+    </div>
+
+    <div class="card">
+      <h2>Base giuridica e conservazione</h2>
+      <p>Trattamento sul dispositivo: esecuzione del servizio che hai avviato. File CSV: sotto il tuo controllo finché non li esporti o pubblichi. Tracce pubblicate sul sito/repo: finché restano nel progetto community o finché non chiedi rimozione ragionevole via GitHub.</p>
+    </div>
+
+    <div class="card">
+      <h2>Diritti e minori</h2>
+      <p>Puoi cancellare i CSV dall’app/archivio del telefono in qualsiasi momento. Per tracce già pubbliche: apri una Issue sul repo. Il servizio non è rivolto a minori di 13 anni.</p>
+      <p class="note">Non inventiamo dati di copertura: campi assenti nel CSV restano vuoti. Nessuna vendita di dati a terzi a scopo pubblicitario.</p>
+    </div>
   </main>
-  <footer>Segnale Treni Community · MVP v0.1 · GBOT · dati demo ≠ copertura reale</footer>
+  <footer>Segnale Treni Community · informativa per sito e app SegnaleTreno · GBOT</footer>
 </body>
 </html>
