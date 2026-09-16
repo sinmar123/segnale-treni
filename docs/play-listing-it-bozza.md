@@ -1,8 +1,9 @@
-# Bozza listing Google Play — SegnaleTreno (IT)
+# Listing Google Play — SegnaleTreno (IT)
 
-**Stato:** bozza GBOT per revisione di *applicazioni* prima di qualsiasi push in Console.
+**Stato:** approvata da *applicazioni* (2026-09-16). Non pubblicare in Console finché Sandro non conferma l’account developer.
 **Package:** `it.alessandrosanvitale.segnaletreno`
-**Privacy URL (Pages):** https://sinmar123.github.io/segnale-treni/privacy.html
+**Privacy URL:** https://sinmar123.github.io/segnale-treni/privacy.html
+**Categoria:** Strumenti (Tools) — non Mappe
 
 ## Titolo (max 30)
 SegnaleTreno
@@ -25,12 +26,10 @@ Ideale per chi lavora o naviga sui treni e vuole mappe e confronti onesti, senza
 
 Community (opzionale): https://sinmar123.github.io/segnale-treni/
 
-## Categoria suggerita
-Strumenti (Tools) — preferenza applicazioni; Mappe solo se Sandro insiste
+## Data safety (bozza → Console)
+• Posizione: raccolta sull’app per funzionalità; non venduta; sul dispositivo salvo export utente
+• Se `ACCESS_BACKGROUND_LOCATION` resta nel manifesto release: dichiararla in Data safety
+• Info telefono/SIM: dual SIM e tipo rete; non venduta
+• File CSV: locali; condivisione solo su azione utente
 
-## Note Data safety (bozza)
-• Posizione: raccolta sull’app, usata per funzionalità app; non venduta; resta sul dispositivo salvo export utente
-• Info telefono/SIM: per dual SIM e tipo rete; non venduta
-• File CSV: creati localmente; condivisione solo su azione utente
-
--- GBOT 2026-09-16
+-- GBOT / applicazioni 2026-09-16
