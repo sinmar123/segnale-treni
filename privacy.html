@@ -18,43 +18,38 @@
     <p class="note">Ultimo aggiornamento: 16 settembre 2026. Copre l’app Android <strong>SegnaleTreno</strong> (<code>it.alessandrosanvitale.segnaletreno</code>) e il sito community <strong>Segnale Treni</strong>.</p>
 
     <div class="card">
-      <h2>Titolare</h2>
-      <p>Alessandro Sanvitale (Genova). Contatto progetto: repository GitHub <a href="https://github.com/sinmar123/segnale-treni">sinmar123/segnale-treni</a>.</p>
+      <h2>Titolare e contatto</h2>
+      <p>Alessandro Sanvitale (Genova). Contatto progetto: repository GitHub <a href="https://github.com/sinmar123/segnale-treni">sinmar123/segnale-treni</a> (Issue). Eventuale email dello studio può essere aggiunta in seguito.</p>
     </div>
 
     <div class="card">
-      <h2>App SegnaleTreno — dati raccolti sul dispositivo</h2>
-      <p>L’app registra <strong>localmente</strong> (sul telefono) campioni di:</p>
+      <h2>App Android SegnaleTreno</h2>
+      <p>SegnaleTreno misura GPS e qualità del segnale cellulare durante un viaggio (tipicamente in treno) e può esportare un CSV.</p>
+      <h3>Permessi</h3>
       <ul>
-        <li>posizione GPS (latitudine, longitudine, accuratezza) durante la registrazione del viaggio;</li>
-        <li>segnale cellulare (dBm/livello, tipo rete, etichetta operatore, metriche LTE/5G se disponibili) per SIM attiva/e;</li>
-        <li>timestamp ISO di ogni campione.</li>
+        <li><strong>Posizione</strong> (fine/approssimativa): per le coordinate di ogni campione.</li>
+        <li><strong>Posizione in background</strong> (se presente in release): solo mentre una registrazione è attiva, così il campionamento continua con lo schermo spento; non usata per tracciamento pubblicitario.</li>
+        <li><strong>Stato telefono / SIM</strong>: per leggere operatore e segnale su una o due SIM (dual SIM).</li>
+        <li><strong>Notifiche</strong>: per il foreground service «registrazione in corso».</li>
       </ul>
-      <p><strong>Non</strong> richiede account, <strong>non</strong> invia i dati a server nostri in automatico, <strong>non</strong> raccoglie nome, email, rubrica o contenuti personali. L’export CSV avviene solo se lo condividi tu (share sheet / file).</p>
-      <p>Permessi Android tipici: posizione (anche in background mentre la registrazione è attiva), stato telefono/SIM per dual SIM, notifiche del foreground service. Servono al campionamento in viaggio, non a profilazione pubblicitaria.</p>
+      <h3>Dove stanno i dati</h3>
+      <p>I campioni restano <strong>sul dispositivo</strong>. Nessun account obbligatorio. Nessun invio automatico a server nostri. Il CSV viene creato in locale e lasciato il telefono <strong>solo se tu</strong> usi Condividi / salva file.</p>
+      <h3>Cosa c’è nel CSV</h3>
+      <p>Timestamp, coordinate, accuratezza, id subscription, operatore, tipo rete, dBm/livello e metriche radio se disponibili. <strong>Niente</strong> nome, email, rubrica o contenuti personali.</p>
     </div>
 
     <div class="card">
-      <h2>Sito community — anteprima CSV (v0)</h2>
-      <p>Su <a href="upload.html">Carica CSV</a> il file è letto <strong>solo nel tuo browser</strong>: non viene caricato su un nostro server. La mappa demo può mostrare tracce già pubblicate nel repository (es. contributi o demo).</p>
+      <h2>Sito community Segnale Treni</h2>
+      <p>Su <a href="upload.html">Carica CSV</a> (v0) il file è letto <strong>solo nel browser</strong>: non viene inviato a un nostro server. Tracce già nel repository o pubblicate come contributo possono comparire sulla mappa pubblica.</p>
+      <p>Se pubblichi un CSV (Issue/PR o futuri upload), può diventare visibile a tutti. Non allegare dati personali fuori dallo schema. In futuro possibile jitter leggero delle coordinate (~100&nbsp;m) e moderazione.</p>
     </div>
 
     <div class="card">
-      <h2>Contributi pubblici</h2>
-      <p>Se pubblichi un CSV (Issue/PR GitHub o futuri upload community), quel tracciato può diventare <strong>visibile a tutti</strong> sulla mappa. Non allegare dati personali fuori dallo schema CSV. Possibile in futuro un leggero jitter delle coordinate (~100&nbsp;m) e moderazione.</p>
-    </div>
-
-    <div class="card">
-      <h2>Base giuridica e conservazione</h2>
-      <p>Trattamento sul dispositivo: esecuzione del servizio che hai avviato. File CSV: sotto il tuo controllo finché non li esporti o pubblichi. Tracce pubblicate sul sito/repo: finché restano nel progetto community o finché non chiedi rimozione ragionevole via GitHub.</p>
-    </div>
-
-    <div class="card">
-      <h2>Diritti e minori</h2>
-      <p>Puoi cancellare i CSV dall’app/archivio del telefono in qualsiasi momento. Per tracce già pubbliche: apri una Issue sul repo. Il servizio non è rivolto a minori di 13 anni.</p>
-      <p class="note">Non inventiamo dati di copertura: campi assenti nel CSV restano vuoti. Nessuna vendita di dati a terzi a scopo pubblicitario.</p>
+      <h2>Base giuridica, conservazione, diritti</h2>
+      <p>Trattamento sull’app: esecuzione del servizio che hai avviato. File CSV: sotto il tuo controllo finché non li esporti o pubblichi. Tracce pubbliche: finché restano nel progetto o finché non chiedi rimozione ragionevole via GitHub.</p>
+      <p>Puoi cancellare i CSV dal telefono in qualsiasi momento. Servizio non rivolto a minori di 13 anni. Nessuna vendita di dati a terzi a scopo pubblicitario. Non inventiamo valori di copertura: campi assenti restano vuoti.</p>
     </div>
   </main>
-  <footer>Segnale Treni Community · informativa per sito e app SegnaleTreno · GBOT</footer>
+  <footer>Segnale Treni Community · informativa sito + app SegnaleTreno · GBOT</footer>
 </body>
 </html>

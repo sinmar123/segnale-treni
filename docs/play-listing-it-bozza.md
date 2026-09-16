@@ -26,7 +26,7 @@ Ideale per chi lavora o naviga sui treni e vuole mappe e confronti onesti, senza
 Community (opzionale): https://sinmar123.github.io/segnale-treni/
 
 ## Categoria suggerita
-Strumenti / Mappe e navigazione (da confermare)
+Strumenti (Tools) — preferenza applicazioni; Mappe solo se Sandro insiste
 
 ## Note Data safety (bozza)
 • Posizione: raccolta sull’app, usata per funzionalità app; non venduta; resta sul dispositivo salvo export utente
