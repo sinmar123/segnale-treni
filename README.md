@@ -5,6 +5,10 @@ Non è un clone di OpenSignal: la nicchia è la ferrovia italiana, con confronto
 
 L’app Android **SegnaleTreno** (export CSV) è un progetto separato. Qui: upload/anteprima CSV, mappa pubblica, privacy minima, gamification leggera.
 
+## Demo sulla mappa
+
+La mappa pubblica carica di default la registrazione reale `data/segnale_treno_20260916_065422.csv` (16/09/2026, dual SIM). I file `sample-*.csv` restano solo per prova UI (dati sintetici).
+
 ## Prova in locale
 
 Apri `index.html` con un browser moderno (doppio clic) oppure:

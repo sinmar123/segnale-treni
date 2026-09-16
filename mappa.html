@@ -18,10 +18,11 @@
   </header>
   <main>
     <h1>Mappa community (demo)</h1>
-    <p class="note">Carica i CSV di esempio (dati fittizi) o passa da <a href="upload.html">Carica CSV</a> con i tuoi file reali.</p>
+    <p class="note">Demo predefinita: registrazione reale del <strong>16/09/2026</strong> (dual SIM TIM/Iliad). I CSV «sintetici» restano disponibili come confronto. Oppure <a href="upload.html">carica il tuo CSV</a>.</p>
     <div class="toolbar">
-      <button class="btn" type="button" id="btn-mono">Demo mono SIM</button>
-      <button class="btn secondary" type="button" id="btn-dual">Demo dual SIM</button>
+      <button class="btn" type="button" id="btn-oggi">Registrazione 16/09</button>
+      <button class="btn secondary" type="button" id="btn-mono">Demo sintetica mono</button>
+      <button class="btn secondary" type="button" id="btn-dual">Demo sintetica dual</button>
       <label>Operatore
         <select id="carrier-filter">
           <option value="*">Tutti</option>
@@ -65,15 +66,16 @@
         refresh();
       }
 
+      document.getElementById('btn-oggi').onclick = () => load('data/segnale_treno_20260916_065422.csv');
       document.getElementById('btn-mono').onclick = () => load('data/sample-mono.csv');
       document.getElementById('btn-dual').onclick = () => load('data/sample-dual.csv');
       document.getElementById('carrier-filter').onchange = refresh;
-      load('data/sample-mono.csv').catch(e => {
+      load('data/segnale_treno_20260916_065422.csv').catch(e => {
         document.getElementById('status').textContent = e.message;
       });
     </script>
 
   </main>
-  <footer>Segnale Treni Community · MVP v0.1 · GBOT · dati demo ≠ copertura reale</footer>
+  <footer>Segnale Treni Community · MVP v0.1 · GBOT · demo 16/09 = traccia reale · CSV sintetici = solo prova UI</footer>
 </body>
 </html>
