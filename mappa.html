@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mappa — Segnale Treni</title>
+  <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">Segnale <span>Treni</span></a>
+    <nav>
+      <a href="index.html">Home</a><a href="mappa.html" aria-current="page">Mappa</a><a href="upload.html">Carica CSV</a><a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Mappa community (demo)</h1>
+    <p class="note">Carica i CSV di esempio (dati fittizi) o passa da <a href="upload.html">Carica CSV</a> con i tuoi file reali.</p>
+    <div class="toolbar">
+      <button class="btn" type="button" id="btn-mono">Demo mono SIM</button>
+      <button class="btn secondary" type="button" id="btn-dual">Demo dual SIM</button>
+      <label>Operatore
+        <select id="carrier-filter">
+          <option value="*">Tutti</option>
+          <option value="TIM">TIM</option>
+          <option value="Iliad">Iliad</option>
+          <option value="Altro">Altro</option>
+        </select>
+      </label>
+      <span class="status" id="status">Nessun tracciato caricato.</span>
+    </div>
+    <div id="map" role="application" aria-label="Mappa segnale"></div>
+    <section class="card">
+      <h2>Gamification (anteprima)</h2>
+      <div class="badge-row" id="badges"></div>
+    </section>
+    <script type="module">
+      import { loadCsvUrl } from './js/csv.js';
+      import { createMap, renderPoints } from './js/map.js';
+      import { estimateTrackKm, badgesFor } from './js/gamification.js';
+
+      const map = createMap('map');
+      const layer = L.layerGroup().addTo(map);
+      let allRows = [];
+
+      function refresh() {
+        const f = document.getElementById('carrier-filter').value;
+        const filtered = f === '*' ? allRows : allRows.filter(r => r.carrier_label === f);
+        const { points } = renderPoints(map, layer, filtered);
+        const km = estimateTrackKm(filtered);
+        document.getElementById('status').textContent =
+          `${points} punti con GPS · ${filtered.length} righe CSV · ~${km} km`;
+        const box = document.getElementById('badges');
+        box.innerHTML = badgesFor(filtered, km).map(b =>
+          `<div class="badge"><strong>${b.title}</strong>${b.detail}</div>`
+        ).join('') || '<p class="note">Nessun badge ancora.</p>';
+      }
+
+      async function load(url) {
+        document.getElementById('status').textContent = 'Caricamento…';
+        allRows = await loadCsvUrl(url);
+        refresh();
+      }
+
+      document.getElementById('btn-mono').onclick = () => load('data/sample-mono.csv');
+      document.getElementById('btn-dual').onclick = () => load('data/sample-dual.csv');
+      document.getElementById('carrier-filter').onchange = refresh;
+      load('data/sample-mono.csv').catch(e => {
+        document.getElementById('status').textContent = e.message;
+      });
+    </script>
+
+  </main>
+  <footer>Segnale Treni Community · MVP v0.1 · GBOT · dati demo ≠ copertura reale</footer>
+</body>
+</html>

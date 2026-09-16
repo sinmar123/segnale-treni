@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy — Segnale Treni</title>
+  <link rel="stylesheet" href="css/style.css" />
+  
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">Segnale <span>Treni</span></a>
+    <nav>
+      <a href="index.html">Home</a><a href="mappa.html">Mappa</a><a href="upload.html">Carica CSV</a><a href="privacy.html" aria-current="page">Privacy</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Privacy minima</h1>
+    <div class="card">
+      <h2>Cosa contiene il CSV</h2>
+      <p>Coordinate GPS, intensità segnale, etichetta operatore, timestamp. <strong>Niente</strong> nome, email, telefono o account.</p>
+      <h2>Anteprima sul sito (v0)</h2>
+      <p>Su <a href="upload.html">Carica CSV</a> il file viene letto <strong>solo nel tuo browser</strong>: non viene inviato a un server di Segnale Treni.</p>
+      <h2>Contributi community</h2>
+      <p>Se carichi un CSV via Issue/PR GitHub, il tracciato può diventare <strong>pubblico</strong> (mappa community). Non allegare informazioni personali fuori dallo schema CSV.</p>
+      <h2>Roadmap</h2>
+      <p>Eventuale jitter leggero delle coordinate (~100&nbsp;m) e moderazione upload quando ci sarà un backend. Non inventiamo metriche di copertura.</p>
+      <p class="note">Contatto progetto: tramite repository GitHub <code>sinmar123/segnale-treni</code>.</p>
+    </div>
+
+  </main>
+  <footer>Segnale Treni Community · MVP v0.1 · GBOT · dati demo ≠ copertura reale</footer>
+</body>
+</html>
