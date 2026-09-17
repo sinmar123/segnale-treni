@@ -15,7 +15,7 @@
   </header>
   <main>
     <h1>Informativa privacy</h1>
-    <p class="note">Ultimo aggiornamento: 16 settembre 2026. Copre l’app Android <strong>SegnaleTreno</strong> (<code>it.alessandrosanvitale.segnaletreno</code>) e il sito community <strong>Segnale Treni</strong>.</p>
+    <p class="note">Ultimo aggiornamento: 17 settembre 2026. Copre l’app Android <strong>SegnaleTreno</strong> (<code>it.alessandrosanvitale.segnaletreno</code>) e il sito community <strong>Segnale Treni</strong>.</p>
 
     <div class="card">
       <h2>Titolare e contatto</h2>
@@ -25,15 +25,16 @@
     <div class="card">
       <h2>App Android SegnaleTreno</h2>
       <p>SegnaleTreno misura GPS e qualità del segnale cellulare durante un viaggio (tipicamente in treno) e può esportare un CSV.</p>
-      <h3>Permessi</h3>
+      <h3>Permessi (manifest attuale)</h3>
       <ul>
-        <li><strong>Posizione</strong> (fine/approssimativa): per le coordinate di ogni campione.</li>
-        <li><strong>Posizione in background</strong> (se presente in release): solo mentre una registrazione è attiva, così il campionamento continua con lo schermo spento; non usata per tracciamento pubblicitario.</li>
-        <li><strong>Stato telefono / SIM</strong>: per leggere operatore e segnale su una o due SIM (dual SIM).</li>
-        <li><strong>Notifiche</strong>: per il foreground service «registrazione in corso».</li>
+        <li><strong>Posizione fine e approssimativa</strong> (<code>ACCESS_FINE_LOCATION</code>, <code>ACCESS_COARSE_LOCATION</code>): coordinate di ogni campione.</li>
+        <li><strong>Posizione in background</strong> (<code>ACCESS_BACKGROUND_LOCATION</code>): dichiarata nell’app. Serve a continuare il campionamento GPS mentre una registrazione è attiva anche con lo schermo spento o l’app non in primo piano; <strong>non</strong> usata per tracciamento pubblicitario né per profilazione. In Google Play Data safety va indicato l’uso della posizione in background.</li>
+        <li><strong>Foreground service location</strong>: notifica persistente «registrazione in corso» durante il campionamento.</li>
+        <li><strong>Stato telefono / SIM</strong> (<code>READ_PHONE_STATE</code>): operatore e segnale su una o due SIM (dual SIM).</li>
+        <li><strong>Notifiche</strong> (<code>POST_NOTIFICATIONS</code>): per il servizio in primo piano.</li>
       </ul>
       <h3>Dove stanno i dati</h3>
-      <p>I campioni restano <strong>sul dispositivo</strong>. Nessun account obbligatorio. Nessun invio automatico a server nostri. Il CSV viene creato in locale e lasciato il telefono <strong>solo se tu</strong> usi Condividi / salva file.</p>
+      <p>I campioni restano <strong>sul dispositivo</strong>. Nessun account obbligatorio. Nessun invio automatico a server nostri. Il CSV viene creato in locale e lascia il telefono <strong>solo se tu</strong> usi Condividi / salva file.</p>
       <h3>Cosa c’è nel CSV</h3>
       <p>Timestamp, coordinate, accuratezza, id subscription, operatore, tipo rete, dBm/livello e metriche radio se disponibili. <strong>Niente</strong> nome, email, rubrica o contenuti personali.</p>
     </div>
